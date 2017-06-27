@@ -1,0 +1,14 @@
+.votingDiv{
+    width:20px;
+    text-align: center;
+    color: #999;
+    display: inline;
+}
+
+.vote-button{
+    cursor: pointer;
+}
+
+.voted{
+    color: orange
+}

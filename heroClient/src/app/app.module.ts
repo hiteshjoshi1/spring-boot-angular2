@@ -9,11 +9,17 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 //Creating a Singleton service by adding the service as provider to app module
-import { HeroService } from './hero.service';
+import { HeroService } from './services/hero.service';
+import {AuthService} from './services/auth.service';
+import {UdemyModule} from './udemy/udemy.module';
+import {UtilModule} from './util/util.module';
+
 //Routing
 //import { RouterModule }   from '@angular/router';
 // Seprating it to its own file
 import { AppRoutingModule }     from './app-routing/app-routing.module';
+
+
 
 // This is actually an Annotation for the AppModule Class
 @NgModule({
@@ -21,12 +27,18 @@ import { AppRoutingModule }     from './app-routing/app-routing.module';
                   FormsModule,
                   AppRoutingModule,
                   HttpModule,
-                  JsonpModule
+                  UdemyModule,
+                  JsonpModule,
+                  UtilModule
+                                    
                  ],
   // add components here
-  declarations: [ AppComponent,HeroesComponent,HeroDetailComponent,DashboardComponent ],
+  declarations: [ AppComponent,HeroesComponent,HeroDetailComponent,
+  DashboardComponent
+  ],
   bootstrap:    [ AppComponent ],
-  providers: [HeroService]
+  providers: [HeroService,AuthService],
+
 })
 export class AppModule {
  }

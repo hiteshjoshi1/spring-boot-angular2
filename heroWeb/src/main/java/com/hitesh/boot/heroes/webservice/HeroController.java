@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +22,13 @@ import com.hitesh.boot.heroes.data.repository.HeroRepository;
  * @author hitjoshi
  *
  */
+@CrossOrigin("*")
 @RestController
 public class HeroController {
     @Autowired
     private HeroRepository heroRepository;
-
+    
+    @CrossOrigin
     @RequestMapping(value="/heroes", method= RequestMethod.GET)
     public List<Hero> findAll(@RequestParam(required=false) String heroId){
         List<Hero> heroes = new ArrayList<Hero>();
@@ -41,7 +44,7 @@ public class HeroController {
         }
         return heroes;
     }
-
+    @CrossOrigin
     @RequestMapping(value="/heroes", method= RequestMethod.PUT,produces = "application/json",consumes = "application/json")
     public Hero updateHero(@RequestBody Hero hero){
         if(hero== null){
@@ -56,7 +59,7 @@ public class HeroController {
 
     }
 
-
+    @CrossOrigin
     @RequestMapping(value="/heroes", method= RequestMethod.POST,produces = "application/json",consumes = "application/json")
     public Hero addHero(@RequestBody Hero hero){	 		
         if(hero== null){
@@ -71,7 +74,7 @@ public class HeroController {
         }
     }
 
-
+    @CrossOrigin
     @RequestMapping(value="/heroes/{id}", method= RequestMethod.DELETE,produces = "application/json")
     public boolean deleteHero(@PathVariable("id") String heroId){
         if(null!=heroId){

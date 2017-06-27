@@ -1,0 +1,5 @@
+<div class = "votingDiv">
+<i class = "glyphicon glyphicon-menu-up vote-button" [class.voted]="myVote===1"   (click)="onUpvoteClick()"></i>
+<span>{{ voteCount+myVote }}</span>
+<i class = "glyphicon glyphicon-menu-down vote-button" [class.voted]="myVote===-1"    (click)="onDownvoteClick()"></i>
+</div>  

@@ -1,0 +1,19 @@
+
+<div *ngFor= "let tweet of tweets">
+<div class="media">
+  <div class="media-left">
+    <!--<a href="#">-->
+      <img class="media-object" src={{tweet.tweetImgUrl}} alt="Image">
+    <!--</a>-->
+  </div>
+  <div class="media-body">
+  <h3 class="media-heading">{{tweet.authorName|uppercase}}</h3><span>{{tweet.authorHandle}}</span>
+    <p>
+      {{tweet.tweetMesg}}
+    </p>   
+    <app-heart [likes]="tweet.numLikes|number"></app-heart>  
+    </div>
+</div>
+</div>
+ 
+

@@ -1,0 +1,29 @@
+<input type="text" appAutoGrow />
+  <!--<ul class = "custom_bullet">-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Author Name</th>
+            <th>Votes</th>
+            <th>Published Reasearch</th>            
+        </tr>
+    </thead>
+<tbody>
+     <tr *ngFor="let author of authors">
+            <td>{{author.name}}</td>
+                  <!--calling component 'vote' passing input params and listening to Vote event-->
+            <td *ngIf= "author.isPublished"><app-vote [voteCount]="post.voteCount" [myVote]="post.myVote" (vote) = "onVote($event)" ></app-vote>  </td>
+            <td *ngIf= "author.isPublished">{{author.publishedReasearcName}}</td>
+            
+        </tr>
+        
+    </tbody>
+</table>
+
+<!--Currency pipe-->
+ <!--currency:'INR':true:'2.2-2'-->
+
+ <!--releaseDate|date|'YYYY-MM-DD'-->
+Cost per head : <span>{{post.cost|currency:'INR':true:'2.2-2'}}</span>
+
+Release Date : <span>{{post.releaseDate | date:'MM:dd:yyyy'}}</span>

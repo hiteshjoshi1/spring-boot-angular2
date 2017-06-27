@@ -7,4 +7,9 @@ import { Component,OnInit  } from '@angular/core';
 })
 export class AppComponent{
     title = 'Tour of Heroes';
+
+
+onFavChange($event){
+  console.log($event);
+}
 }

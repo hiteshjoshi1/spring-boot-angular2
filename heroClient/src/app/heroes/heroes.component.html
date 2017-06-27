@@ -5,6 +5,9 @@
 [class.selected]="hero === selectedHero"
 (click)="onSelect(hero)">
 <span class="badge">{{hero.id}}</span> <span>{{hero.name}}</span>
+<!--Event emitted from favorite component is captured here-->
+<!--passing value to be used to initialize the component-->
+<app-favorite [isFavorite]=false (evntEmitted)="onFavChange($event)"></app-favorite>
 <button class="delete"
      (click)="delete(hero); $event.stopPropagation()">x</button>
 </li>
@@ -19,7 +22,7 @@
 
 <div>
   <label>Hero name:</label> <input #heroName />
-  <button (click)="add(heroName.value); heroName.value=''">
+  <button class = "btn btn-primary" [class.active]="isActive"  (click)="add(heroName.value, $event); heroName.value=''">
     Add
   </button>
 </div>

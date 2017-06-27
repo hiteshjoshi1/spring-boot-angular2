@@ -1,6 +1,6 @@
 import { Component,OnInit  } from '@angular/core';
-import { Hero } from './../hero';
-import { HeroService } from './../hero.service';
+import { Hero } from './../models/hero';
+import { HeroService } from './../services/hero.service';
 import { Router}   from '@angular/router';
 
 
@@ -16,6 +16,7 @@ export class HeroesComponent implements OnInit {
   selectedHero : Hero;
   errorMessage : any;
 
+  isActive:boolean = true;
   // injecting a Service
   constructor(private heroService: HeroService, private router: Router) { }
 
@@ -39,7 +40,8 @@ gotoDetail(): void {
     this.selectedHero = hero;
   }
 
-  add(name: string): void {
+  add(name: string, $event): void {
+    console.log($event);
   name = name.trim();
   if (!name) { return; }
   this.heroService.create(name)

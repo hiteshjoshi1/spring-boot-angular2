@@ -19,11 +19,11 @@
 
 
 	<dependencies>
-	   	  <dependency>
-		  	<groupId>com.hitesh.boot</groupId>
+		<dependency>
+			<groupId>com.hitesh.boot</groupId>
 			<artifactId>heroClient</artifactId>
-			<version>${project.version}</version>	
-	  	</dependency>
+			<version>${project.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -56,6 +56,11 @@
 			<artifactId>xstream</artifactId>
 			<version>1.4.9</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

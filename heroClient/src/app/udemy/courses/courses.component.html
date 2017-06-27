@@ -1,0 +1,26 @@
+ <h3> {{title}}</h3>
+  <!--<input type="text" [value] ="title" appAutoGrow  (input)=onType($event)/>-->
+  <input type="text" [(ngModel)]="title"/>
+
+<div class = "courses">
+  <ul class = "custom_bullet">    
+    <li (click)="onLike(course.id)" *ngFor="let course of courses, let i = index ">
+      <!--See how Bootstrap CSS is applied , with base class = glyphicon and then based on whether its clicked or not changed to filled or empty star-->
+          <!--<i class = "glyphicon" [class.glyphicon-star-empty]= "!course.clicked" [class.glyphicon-star]="course.clicked"></i> {{course.name}}   -->
+      <app-favorite [isFavorite]=!course.clicked></app-favorite>{{i+1}}. {{course.name}} 
+    </li>      
+    </ul>
+   </div> 
+
+<h3> Demonstrating Switch Case</h3>
+
+<ul class= "nav nav-pills">
+  <li [class.active]= "viewMode=='map'"><a (click) ="onClick('map')">Map View</a></li>
+  <li [class.active]= "viewMode=='list'"><a (click) ="onClick('list')">List View</a></li>
+  </ul>  
+  <div class = "content" [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content Test</div>
+    <div *ngSwitchCase="'list'">List View Content Test </div>
+  </div>
+
+
