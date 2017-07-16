@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading" (click) ="toggle()"  >
+    <h3 class="panel-title">{{title}}<i class= "pull-right glyphicon"
+    [ngClass] = "{
+      'glyphicon-chevron-down':!isExpanded,
+      'glyphicon-chevron-up':isExpanded
+    }"></i></h3>
+  </div>
+  <!--class.hidden when you are ok to have the markup in the DOM- DOM generation is easy -->
+  <!--ng-if when you want to remove the markup from DOM - DOM generation is costly andis not done often-->
+  <div class="panel-body" [class.hidden]="!isExpanded">
+    <ng-content select = ".zippyBody"></ng-content>
+  </div>
+</div>

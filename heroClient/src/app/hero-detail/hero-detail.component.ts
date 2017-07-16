@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// ActivatedRoute is needed to get Route Params
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import { Hero } from './../models/hero';
@@ -23,8 +24,8 @@ export class HeroDetailComponent implements OnInit {
   ) {}
 
   ngOnInit():void{
-    this.route.params
-    .switchMap((params: Params) => this.heroService.getHero(+params['id']))
+    // capturing Route parameters
+    this.route.params.switchMap((params: Params) => this.heroService.getHero(+params['id']))
     .subscribe(hero => this.hero = hero);
   }
 

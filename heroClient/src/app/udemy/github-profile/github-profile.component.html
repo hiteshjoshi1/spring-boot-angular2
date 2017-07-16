@@ -1,0 +1,30 @@
+<div class="container">
+<form [formGroup]="gitForm" (ngSubmit)="getUser()" >
+  <div class="form-group">
+
+ <label for="search">GitHub Profile Search</label>
+ <input type ="text" formControlName="gitHubId" required minlength="4" placeholder="Type octocat">
+
+ <button class = "btn btn-primary" type="Submit"  [disabled]="!gitForm.valid">Submit</button>
+ </div>
+</form>
+<div>{{results}}</div>
+</div>
+<div class="container">
+  <i *ngIf="isLoading" class= "fa fa-spinner fa-spin fa-2x"></i>
+
+ <div>  
+  <h2 *ngIf="user.login">@{{user.login}}</h2>   
+  <img src="{{user.avatar_url}}"/>
+ </div>
+
+  <div>
+    <h3 *ngIf="followers.length>0">Followers</h3>
+    <div *ngFor ="let f of followers" class= "media">
+      <div class = "media-left"><h4 class= "media-heading">@{{f.login}}</h4></div>
+      <div class = "media-body">  <img  class = "avatar" src="{{f.avatar_url}}"/></div>
+  </div>
+  <div>
+
+
+</div>

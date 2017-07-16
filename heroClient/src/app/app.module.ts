@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 // import component here
 import { AppComponent }  from './app.component';
 // for ngModel
@@ -15,9 +16,16 @@ import {UdemyModule} from './udemy/udemy.module';
 import {UtilModule} from './util/util.module';
 
 //Routing
-//import { RouterModule }   from '@angular/router';
-// Seprating it to its own file
-import { AppRoutingModule }     from './app-routing/app-routing.module';
+
+// Seprating it to its own file - Udemy Module is a child route
+import {UdemyRoutingModule} from './udemy/udemy.routing';
+// Main Routing file
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
+import { SignupComponent } from './signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+// import { SummarizePipe } from './util/summarize.pipe';
+
 
 
 
@@ -25,19 +33,21 @@ import { AppRoutingModule }     from './app-routing/app-routing.module';
 @NgModule({
   imports:      [ BrowserModule,
                   FormsModule,
+                  UdemyRoutingModule,
                   AppRoutingModule,
                   HttpModule,
                   UdemyModule,
                   JsonpModule,
-                  UtilModule
-                                    
+                  UtilModule,
+                  ReactiveFormsModule
                  ],
   // add components here
-  declarations: [ AppComponent,HeroesComponent,HeroDetailComponent,
-  DashboardComponent
-  ],
+  declarations: [ AppComponent, HeroesComponent, HeroDetailComponent,
+  DashboardComponent,
+  SignupComponent
+   ],
   bootstrap:    [ AppComponent ],
-  providers: [HeroService,AuthService],
+  providers: [HeroService, AuthService],
 
 })
 export class AppModule {

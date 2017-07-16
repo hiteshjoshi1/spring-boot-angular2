@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="signUp()">
+    <div class="form-group">
+        <label for="userName">Username</label>
+        <input 
+            formControlName = "userName"
+            id="userName" 
+            type="text" minlength="4"
+            class="form-control">
+            
+            <!--Notice how we need to use form.controls.userName-->
+            <div *ngIf="form.controls.userName.pending"><i class = "fa fa-spinner fa-spin fa-2x"></i></div>
+            
+            <div *ngIf="form.controls.userName.touched && form.controls.userName.errors">
+                 <div class="alert alert-danger" *ngIf="form.controls.userName.errors.minlength">
+                  User Name has to be minimum 6 characters
+                </div>
+                <div class="alert alert-danger" *ngIf="form.controls.userName.errors.cannotContainSpace">
+                  User Name cannot have space in between
+                </div>
+                <div *ngIf="form.controls.userName.errors.inValidLogin" class="alert alert-danger">User Name is invalid</div>
+                <div class="alert alert-danger" *ngIf="form.controls.userName.errors.required">
+                   User Name is required                  
+                </div>
+                <div class="alert alert-danger" *ngIf="form.controls.userName.errors.uniqueConstraintViolation">
+                User Name is Already Taken
+                </div>
+               
+             </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+            id="password" formControlName = "password"
+            type="password" 
+            class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Sign Up</button>
+</form>

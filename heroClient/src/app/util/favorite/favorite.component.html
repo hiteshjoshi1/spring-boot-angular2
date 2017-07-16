@@ -1,2 +1,7 @@
-<i class = "glyphicon" [class.glyphicon-star-empty]="isFavorite" [class.glyphicon-star]="!isFavorite"
-(click)="onFavorite()" (change)="onFavChange($event)"></i>
+<!--<i class = "glyphicon" [class.glyphicon-star-empty]="isFavorite" [class.glyphicon-star]="!isFavorite"
+(click)="onFavorite()" (change)="onFavChange($event)"></i>-->
+
+<i class = "glyphicon" [ngClass] = "{
+    'glyphicon-star-empty':isFavorite,
+    'glyphicon-star':!isFavorite
+}" (click)="onFavorite()" (change)="onFavChange($event)"></i>

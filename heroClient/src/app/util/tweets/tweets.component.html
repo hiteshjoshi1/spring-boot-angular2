@@ -9,11 +9,21 @@
   <div class="media-body">
   <h3 class="media-heading">{{tweet.authorName|uppercase}}</h3><span>{{tweet.authorHandle}}</span>
     <p>
-      {{tweet.tweetMesg}}
+      <!--Summarize is a custom pipe here and we are passing an argument to it-->
+      {{tweet.tweetMesg | summarize}}
     </p>   
-    <app-heart [likes]="tweet.numLikes|number"></app-heart>  
+    <app-heart [likes]="tweet.numLikes"></app-heart>  
     </div>
 </div>
 </div>
  
+ <div class = "zipp>">
+ Creating a Zippy Component
 
+ <app-zippy [title] = "'Title passed from Tweet HTML with @Input() '">
+   <div class= "zippyBody">Body of content passed from Tweet html</div></app-zippy>
+<app-zippy [title] = "'Title passed from Tweet HTML with @Input() Number 2 '">
+   <div class= "zippyBody">Body of content passed from Tweet html Number 2</div></app-zippy>
+
+
+<div>
