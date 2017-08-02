@@ -21,7 +21,7 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-      http
+        http.authorizeRequests().antMatchers("/info").permitAll().and()
         .httpBasic()
       .and()
         .authorizeRequests()
