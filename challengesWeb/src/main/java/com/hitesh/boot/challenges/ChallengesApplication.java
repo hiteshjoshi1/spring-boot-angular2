@@ -1,4 +1,4 @@
-package com.hitesh.boot.heroes;
+package com.hitesh.boot.challenges;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,17 +10,18 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.converter.ByteArrayHttpMessageConverter;
 
 
-@SpringBootApplication(scanBasePackages={"com.hitesh.boot.heroes"})
-@EnableJpaRepositories(basePackages = "com.hitesh.boot.heroes.data.repository")
+/**
+ * @author hitjoshi
+ *
+ */
+@SpringBootApplication(scanBasePackages={"com.hitesh.boot.challenges.*"})
+@EnableJpaRepositories(basePackages = "com.hitesh.boot.challenges.repositories")
 @EnableDiscoveryClient
-public class HeroesApplication extends SpringBootServletInitializer {
-
-//    @Autowired
-//    private DiscoveryClient discoveryClient;
+public class ChallengesApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args)  {
-        System.setProperty("spring.config.name", "heroes-server");
-        SpringApplication.run(HeroesApplication.class, args);
+        System.setProperty("spring.config.name", "challenges-server");
+        SpringApplication.run(ChallengesApplication.class, args);
     }
     @Bean
     public HttpMessageConverters customConverters() {
@@ -28,10 +29,5 @@ public class HeroesApplication extends SpringBootServletInitializer {
         return new HttpMessageConverters(arrayHttpMessageConverter);
     }
     
-//    @RequestMapping("/service-instances/{applicationName}")
-//    public List<ServiceInstance> serviceInstancesByApplicationName(
-//            @PathVariable String applicationName) {
-//        return this.discoveryClient.getInstances(applicationName);
-//    }
 
 }

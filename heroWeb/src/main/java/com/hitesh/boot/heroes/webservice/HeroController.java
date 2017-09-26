@@ -28,13 +28,13 @@ public class HeroController {
     @Autowired
     private HeroRepository heroRepository;
     
-    @CrossOrigin
+    @CrossOrigin("*")
     @RequestMapping(value="/heroes", method= RequestMethod.GET)
     public List<Hero> findAll(@RequestParam(required=false) String heroId){
         List<Hero> heroes = new ArrayList<Hero>();
         if(null==heroId){
             Iterable<Hero> results = this.heroRepository.findAll();
-            results.forEach(room-> {heroes.add(room);});
+            results.forEach(hero-> {heroes.add(hero);});
         }else{
             long id = Long.parseLong(heroId);
             Hero hero = this.heroRepository.findById(id);

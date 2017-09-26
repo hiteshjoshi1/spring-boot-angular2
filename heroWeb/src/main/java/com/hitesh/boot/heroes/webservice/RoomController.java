@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hitesh.boot.heroes.data.entity.Room;
 import com.hitesh.boot.heroes.data.repository.RoomRepository;
-
 @RestController
 public class RoomController {
     @Autowired
