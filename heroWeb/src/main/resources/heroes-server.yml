@@ -44,5 +44,11 @@ security:
   user:
     password:  password    
 
-
+#---
+#spring:
+#  profiles: cloud
+#eureka:
+#  instance:
+#    hostname: ${APPLICATION_DOMAIN}
+#    nonSecurePort: 80
 

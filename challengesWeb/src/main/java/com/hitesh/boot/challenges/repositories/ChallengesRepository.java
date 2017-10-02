@@ -1,5 +1,7 @@
 package com.hitesh.boot.challenges.repositories;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,5 +15,5 @@ import com.hitesh.boot.challenges.entity.Challenges;
 @Repository
 public interface ChallengesRepository extends CrudRepository<Challenges, Long>{
     Challenges findByChallengesId(long challengesId);
-    Challenges findByChallengeLevel(long challengeLevel);
+    List<Challenges> findByChallengeLevel(int challengeLevel);
 }

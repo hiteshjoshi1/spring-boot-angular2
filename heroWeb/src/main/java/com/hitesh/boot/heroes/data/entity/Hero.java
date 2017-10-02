@@ -17,6 +17,23 @@ public class Hero {
     private long id;
     @Column(name = "NAME")
     private String name;
+    
+    @Column(name = "CHALLENGE_LEVEL")
+    private int challengeLevel;
+
+    /**
+     * @return the challengeLevel
+     */
+    public int getChallengeLevel() {
+        return challengeLevel;
+    }
+
+    /**
+     * @param challengeLevel the challengeLevel to set
+     */
+    public void setChallengeLevel(int challengeLevel) {
+        this.challengeLevel = challengeLevel;
+    }
 
     /*
      * (non-Javadoc)
