@@ -23,12 +23,15 @@ import com.hitesh.boot.heroes.data.entity.Hero;
 import com.hitesh.boot.heroes.data.repository.HeroRepository;
 import com.hitesh.boot.heroes.service.HeroChallengeService;
 
+import io.swagger.annotations.Api;
+
 /**
  * @author hitjoshi
  *
  */
 @CrossOrigin("*")
 @RestController
+@Api(value="heroAPI",description="For All your Superhero needs" )
 public class HeroController {
 
     protected Logger logger = Logger.getLogger(HeroController.class
@@ -42,7 +45,7 @@ public class HeroController {
 
 
     @CrossOrigin("*")
-    @RequestMapping(value="/heroes", method= RequestMethod.GET)
+    @RequestMapping(value="/heroes", method= RequestMethod.GET, produces = "application/json")
     public List<Hero> findAll(@RequestParam(required=false) String heroId){
         List<Hero> heroes = new ArrayList<Hero>();
         if(null==heroId){

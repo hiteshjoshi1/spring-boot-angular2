@@ -9,10 +9,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none  
-#  thymeleaf:
-#    cache: false             # Allow Thymeleaf templates to be reloaded at runtime
-#    prefix: classpath:/accounts-server/templates/    # Trailing / mandatory
-                             # Template location for this application only
+
+                
 
 # Map the error path to error template (for Thymeleaf)
 error:
@@ -20,17 +18,17 @@ error:
 
 # HTTP Server
 server:
-  port: 2222   # HTTP (Tomcat) port
+  port: 2222
+  display-name: Heroes
+  statusPageUrlPath: /heroes
 
-# Discovery Server Access
-#  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
-#  2. Define URL of registration server (defaultZone)
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
-  instance:
-    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:1111/eureka/
+#  instance:
+#    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    
 
 #  3. If using the Angel release-train ONLY, give the process a unique instance id 
 #     so that multiple instances can register when running on SAME host.  This is

@@ -11,8 +11,8 @@ spring:
       ddl-auto: none  
 #  thymeleaf:
 #    cache: false             # Allow Thymeleaf templates to be reloaded at runtime
-#    prefix: classpath:/accounts-server/templates/    # Trailing / mandatory
-                             # Template location for this application only
+#    prefix: classpath:/challenges-server/templates/    # Trailing / mandatory
+#                              Template location for this application only
 
 # Map the error path to error template (for Thymeleaf)
 error:
@@ -21,6 +21,7 @@ error:
 # HTTP Server
 server:
   port: 3333   # HTTP (Tomcat) port
+  display-name: Challenges
 
 # Discovery Server Access
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration

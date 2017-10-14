@@ -1,0 +1,9 @@
+eureka:
+  instance:
+    non-secure-port: 3333
+    statusPageUrlPath: /swagger-ui.html
+    
+  client:
+   serviceUrl:
+     defaultZone: http://localhost:1111/eureka/
+  

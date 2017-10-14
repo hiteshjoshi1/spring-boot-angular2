@@ -1,0 +1,10 @@
+eureka:
+  instance:
+    non-secure-port: 2222
+    statusPageUrlPath: /swagger-ui.html
+    leaseRenewalIntervalInSeconds: 5     
+  client:
+    serviceUrl:
+     defaultZone: http://localhost:1111/eureka/
+  
+   
