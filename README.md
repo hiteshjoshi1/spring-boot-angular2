@@ -104,3 +104,7 @@ http://localhost:5555/heroes-service/heroes
 Challenges API via proxy -
 http://localhost:5555/challenges-service/api/challenges
 
+Swagger Documentation-
+http://localhost:2222/swagger-ui.html#/
+
+http://localhost:3333/swagger-ui.html#/
