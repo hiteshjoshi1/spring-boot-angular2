@@ -1,7 +1,7 @@
 # Spring properties
 spring:
   application:
-     name: challenges-service  # Service registers under this name
+     name: challenges-service
   freemarker:
     enabled: false           # Ignore Eureka dashboard FreeMarker templates
   datasource:

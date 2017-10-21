@@ -21,6 +21,7 @@
 		<module>heroClient</module>
 		<module>serviceRegistration</module>
 		<module>challengesWeb</module>
+		<module>zuulGateway</module>
 	</modules>
 	
 		<properties>

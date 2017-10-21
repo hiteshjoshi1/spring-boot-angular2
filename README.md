@@ -1,4 +1,4 @@
-<h1>Spring Boot and Angular Starter Project</h1>
+<h1>Spring Boot- Microservices Netflix Eureka And some Angular 2</h1>
 
 
 <h2>Learning objectives : Achieved</h2> -
@@ -43,13 +43,15 @@ Starting the Eureka Server
 java -jar serviceRegistration/target/serviceRegistration-0.0.1-SNAPSHOT.war
 
 
-Hit -
+<b>Eureka Endpoint - </b> 
 http://localhost:1111/
 
 
 Start the individual micro applications
 
 java -jar challengesWeb/target/challengesWeb-0.0.1-SNAPSHOT.war
+
+http://localhost:2222/
 
 
 Start the same application in the same JVM different port
@@ -60,19 +62,36 @@ basically to override any spring boot properties use -- followed by Spring boot 
 
 java -jar challengesWeb/target/challengesWeb-0.0.1-SNAPSHOT.war  --server.port=3331
 
+Your Microservice should be up at http://localhost:3331/api/challenges
+
+
+
 
 Starting the Heroes Application
 
 java -jar heroWeb/target/heroesWeb-0.0.1-SNAPSHOT.war
+
+Your other microservice should be up at http://localhost:2222/heroes
 
 
 Replicated Heroes Micro Application
 
 java -jar heroWeb/target/heroesWeb-0.0.1-SNAPSHOT.war  --server.port=2223
 
+Replicate Microservice should be up at http://localhost:2223/heroes
 
 
+Starting the zuul Proxy
 
+java -jar zuulGateway/target/zuulGateway-0.0.1-SNAPSHOT.jar
 
+Deployed at  port 5555
 
+You should be able to access your API using the Zuul gateway  
+
+Heroes API via proxy - [Secure end point- basic security , User Name - user. Password - password ] 
+http://localhost:5555/heroes-service/heroes
+
+Challenges API via proxy -
+http://localhost:5555/challenges-service/api/challenges
 

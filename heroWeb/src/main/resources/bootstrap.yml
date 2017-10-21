@@ -1,6 +1,6 @@
 eureka:
   instance:
-    non-secure-port: 2222
+    non-secure-port: ${server.port:2222}
     statusPageUrlPath: /swagger-ui.html
     leaseRenewalIntervalInSeconds: 5     
   client:

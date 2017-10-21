@@ -1,6 +1,6 @@
 eureka:
   instance:
-    non-secure-port: 3333
+    non-secure-port: ${server.port:3333} # so that different instances of microservice have their own swagger Ui 
     statusPageUrlPath: /swagger-ui.html
     
   client:
