@@ -27,6 +27,9 @@
 
 
 
+![Basic Architecture Diagram](https://github.com/hiteshjoshi1/spring-boot-angular2/blob/images/Capture.PNG)
+
+
 ---------------------------------------------------------------------------------------
 
 Child Web Project has a dependency on the Client Project and by default opens it index.html.
@@ -70,7 +73,6 @@ Basically to override any spring boot properties use -- followed by Spring boot 
 
 Your Microservice should be up at 
 http://localhost:3331/api/challenges
-
 
 
 
